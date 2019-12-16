@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+	</head>
+	<style>
+		body {
+			background: #999;
+		}
+		.stage {
+			perspective: 1000px;
+			-webkit-perspective: 1000px;
+		}
+
+		.parent {
+			width: 800px;
+			height: 400px;
+			margin: 100px auto;
+			/*相对定位*/
+			position: relative;
+			transform: rotatex(-20deg) rotatey(0deg);
+			/*指定子元素位置摆放形式*/
+			transform-style: preserve-3d;
+			transform-origin: center center;
+			animation: scroll 10s linear infinite;
+			animation-fill-mode: backwards;
+		}
+		.parent div {
+			width: 200px;
+			height: 200px;
+			/* background-color: red; */
+			position: absolute;
+			top: 150px;
+			left: 350px;
+			text-align: center;
+			font: 700;
+			font-size: 3em;
+			color: royalblue;
+		}
+		.parent div img {
+			width: 100%;
+		}
+		.parent div:nth-child(1) {
+			transform: rotatey(0deg) translatez(100px);
+			background: seagreen;
+		}
+		.parent div:nth-child(2) {
+			transform: rotatey(90deg) translatez(100px);
+			background: yellow;
+		}
+		.parent div:nth-child(3) {
+			transform: rotatey(180deg) translatez(100px);
+			background: blue;
+		}
+		.parent div:nth-child(4) {
+			transform: rotatey(270deg) translatez(100px);
+			background: sandybrown;
+		}
+		.parent div:nth-child(5) {
+			transform: rotatex(90deg) translatez(100px);
+			background: red;
+		}
+		.parent div:nth-child(6) {
+			transform: rotatex(-90deg) translatez(100px);
+			background: rgb(185, 78, 78);
+		}
+		@keyframes scroll {
+			0% {
+				transform: rotatex(-360deg) rotatey(0deg) rotatez(60deg);
+			}
+			100% {
+				transform: rotatez(-90deg) rotatey(360deg) rotatex(-60deg);
+			}
+		}
+	</style>
+	<body>
+		<div class="stage">
+			<div class="parent">
+				<div>
+					<img src="../imgs/265.jpg" alt="" />
+				</div>
+				<div>
+					<img src="../imgs/265.jpg" alt="" />
+				</div>
+				<div>
+					<img src="../imgs/265.jpg" alt="" />
+				</div>
+				<div>
+					<img src="../imgs/265.jpg" alt="" />
+				</div>
+				<div>
+					<img src="../imgs/265.jpg" alt="" />
+				</div>
+				<div>
+					<img src="../imgs/265.jpg" alt="" />
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
